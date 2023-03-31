@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  dart_api:
+    build: .
+    ports:
+    - "8888:8888"
+
+  db:
+    image: "postgres:11"
+    container_name: "postgres_database"
+    environment:
+      - POSTGRES_PASSWORD=1
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
+    ports:
+      - "55432:5432"
